@@ -1,14 +1,14 @@
-FROM ubuntu:bionic-20190612
+FROM ubuntu:focal-20220826
 
-LABEL maintainer="sameer@damagehead.com"
+LABEL maintainer="libra9z@163.com"
 
-ENV REDIS_VERSION=4.0.9 \
+ENV REDIS_VERSION=7.0.4 \
     REDIS_USER=redis \
     REDIS_DATA_DIR=/var/lib/redis \
     REDIS_LOG_DIR=/var/log/redis
 
 RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y redis-server=5:${REDIS_VERSION}* \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y redis-server=6:${REDIS_VERSION}* \
  && sed 's/^bind /# bind /' -i /etc/redis/redis.conf \
  && sed 's/^logfile /# logfile /' -i /etc/redis/redis.conf \
  && sed 's/^daemonize yes/daemonize no/' -i /etc/redis/redis.conf \
