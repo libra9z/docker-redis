@@ -44,7 +44,7 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 ```bash
-docker pull libra9z/redis:7.0.4
+docker pull libra9z/redis:5.0.7
 ```
 
 Alternatively you can build the image yourself.
@@ -61,7 +61,7 @@ Start Redis using:
 docker run --name redis -d --restart=always \
   --publish 6379:6379 \
   --volume /srv/docker/redis:/var/lib/redis \
-  libra9z/redis:7.0.4
+  libra9z/redis:5.0.7
 ```
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
@@ -74,7 +74,7 @@ You can customize the launch command of Redis server by specifying arguments to 
 docker run --name redis -d --restart=always \
   --publish 6379:6379 \
   --volume /srv/docker/redis:/var/lib/redis \
-  libra9z/redis:7.0.4 --appendonly yes
+  libra9z/redis:5.0.7 --appendonly yes
 ```
 
 Please refer to http://redis.io/topics/config for further details.
@@ -101,7 +101,7 @@ docker run --name redis -d --restart=always \
   --publish 6379:6379 \
   --env 'REDIS_PASSWORD=redispassword' \
   --volume /srv/docker/redis:/var/lib/redis \
-  libra9z/redis:7.0.4
+  libra9z/redis:5.0.7
 ```
 
 Clients connecting to the Redis server will now have to authenticate themselves with the password `redispassword`.
@@ -116,7 +116,7 @@ By default the Redis server logs are sent to the standard output. Using the [Com
 docker run --name redis -d --restart=always \
   --publish 6379:6379 \
   --volume /srv/docker/redis:/var/lib/redis \
-  libra9z/redis:7.0.4 --logfile /var/log/redis/redis-server.log
+  libra9z/redis:5.0.7 --logfile /var/log/redis/redis-server.log
 ```
 
 To access the Redis logs you can use `docker exec`. For example:
@@ -134,7 +134,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull libra9z/redis:7.0.4
+  docker pull libra9z/redis:5.0.7
   ```
 
   2. Stop the currently running image:
@@ -154,7 +154,7 @@ To upgrade to newer releases:
   ```bash
   docker run --name redis -d \
     [OPTIONS] \
-    libra9z/redis:7.0.4
+    libra9z/redis:5.0.7
   ```
 
 ## Shell Access
