@@ -2,13 +2,13 @@ FROM ubuntu:focal-20220826
 
 LABEL maintainer="libra9z@163.com"
 
-ENV REDIS_VERSION=7.0.4-1 \
+ENV REDIS_VERSION=5.0.7 \
     REDIS_USER=redis \
     REDIS_DATA_DIR=/var/lib/redis \
     REDIS_LOG_DIR=/var/log/redis
 
 RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y redis=6:${REDIS_VERSION}* \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y redis=5:${REDIS_VERSION}* \
  && sed 's/^bind /# bind /' -i /etc/redis/redis.conf \
  && sed 's/^logfile /# logfile /' -i /etc/redis/redis.conf \
  && sed 's/^daemonize yes/daemonize no/' -i /etc/redis/redis.conf \
