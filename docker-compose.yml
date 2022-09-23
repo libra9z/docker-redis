@@ -1,5 +1,5 @@
 Redis:
-  image: libra9z/redis:7.0.4
+  image: libra9z/redis:5.0.7
   ports:
     - "6379:6379"
   volumes:
