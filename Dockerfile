@@ -2,7 +2,7 @@ FROM ubuntu:focal-20220826
 
 LABEL maintainer="libra9z@163.com"
 
-ENV REDIS_VERSION=7.0.4 \
+ENV REDIS_VERSION=7.0.4-1 \
     REDIS_USER=redis \
     REDIS_DATA_DIR=/var/lib/redis \
     REDIS_LOG_DIR=/var/log/redis
