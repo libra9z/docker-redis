@@ -8,7 +8,7 @@ ENV REDIS_VERSION=7.0.4 \
     REDIS_LOG_DIR=/var/log/redis
 
 RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y redis-server=6:${REDIS_VERSION}* \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y redis-server=${REDIS_VERSION}* \
  && sed 's/^bind /# bind /' -i /etc/redis/redis.conf \
  && sed 's/^logfile /# logfile /' -i /etc/redis/redis.conf \
  && sed 's/^daemonize yes/daemonize no/' -i /etc/redis/redis.conf \
